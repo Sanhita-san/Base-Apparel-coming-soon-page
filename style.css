@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  position: relative;
+}
+
+#hero-desc {
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-size: cover;
+  padding: 50px 26%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+#logo {
+  width: min-content;
+  position: absolute;
+  top: 50px;
+}
+
+.hero-heading {
+  color: var(--Dark-Grayish-Red);
+  font-size: 70px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.hero-heading span {
+  font-weight: 300;
+  color: var(--Desaturated-Red);
+}
+
+#hero-desc p {
+  color: var(--Desaturated-Red);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#email {
+  border-radius: 25px;
+  border: 1px solid var(--Desaturated-Red);
+  background-color: transparent;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+#email::placeholder {
+  color: var(--Desaturated-Red);
+  font-size: 13px;
+}
+
+#email:focus {
+  border: 2px solid var(--Soft-Red);
+  outline: none;
+}
+
+#email:focus ~ #submit-btn {
+  padding: 12.5px 40px;
+  top: 0px;
+}
+
+#err {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-100%);
+  visibility: hidden;
+}
+
+p#err-msg {
+  color: var(--Soft-Red);
+  padding-left: 20px;
+  margin-top: 5px;
+  font-size: 13px;
+  visibility: hidden;
+}
+
+#submit-btn {
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  border-radius: 25px;
+  padding: 11.5px 40px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  box-shadow: 0 8px 15px hsl(0, 74%, 74%, 0.5);
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background: hsl(0, 80%, 86%);
+}
+
+#submit-btn img {
+  height: 15px;
+}
+
+form {
+  position: relative;
+}
+
+#hero-img {
+  background-image: url("./images/hero-desktop.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 375px) and (max-width: 1439px) {
+  body {
+    min-height: 100vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    padding-top: 70px;
+    width: 375px;
+    margin: auto;
+  }
+
+  #logo {
+    height: 20px;
+    top: 25px;
+  }
+
+  #hero-img {
+    background-image: url("./images/hero-mobile.jpg");
+    height: 250px;
+  }
+
+  #hero-desc {
+    padding: 50px 25px;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 45px;
+  }
+
+  #hero-desc p {
+    font-size: 15px;
+  }
+
+  #submit-btn,
+  #email:focus ~ #submit-btn {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  #err {
+    right: 70px;
+  }
+
+  p#err-msg {
+    text-align: left;
+  }
+}
